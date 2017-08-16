@@ -2,12 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="author" content="Allan Rodríguez">
     <title>Spotify | Allan Rodríguez</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rubik" rel="stylesheet">
-    <link rel="stylesheet" href="spotify_styles.css">
-    <script src="header.js"></script>
+    <link rel="icon" href="resources/images/icon.png" sizes="240x240" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rubik">
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <link rel="stylesheet" href="resources/css/spotify_styles.css">
+    <script src="resources/js/header.js"></script>
 </head>
-<body>
+<body class="bgtomato yellow">
     <div id="header" class="header">
         <div class="bigTitle">
             ALLAN <span class="bold">RODRÍGUEZ</span>
@@ -15,22 +18,36 @@
         <a href="index.html">Home</a> | <a href="linkedin.html">LinkedIn</a> | <a href="resume.html">Résumé</a> | Spotify<br>
     </div>
     <div id="content" class="content">
-        <div class="bigTitle bold firstLetter">Spotify</div>
-        <p>
-            <span class="firstLetter">I</span> started this Spotify playlist almost two years ago to hold the songs that I've come across and liked. This isn't by any means the extent of my taste, but a sampler of it as it has evolved over the years. I plan to continue adding music to it as I please for many more years to come.
-        </p>
-        <p>
-            If you have any recommendations for me, I'd love to hear them. Hope you enjoy!
-        </p>
-        <br>
+        <span class="bigTitle bold firstLetter bgyellow tomato">Spotify</span>
+        <div style="width:75%;margin:0 auto">
+            <p>
+                <span class="firstLetter skyblue">I</span> started this Spotify playlist almost two years ago to hold the songs that I've come across and liked. This isn't by any means the extent of my taste, but a sampler of it as it has evolved over the years. I plan to continue adding music to it as I please for many more years to come.
+            </p>
+            <p>
+                If you have any recommendations for me, I'd love to hear them. Hope you enjoy!
+            </p>
+        </div>
         <div style="text-align: center">
             <iframe
+                id="playlist"
                 src="https://open.spotify.com/embed/user/wienerbreado/playlist/5QH8IiTwdd6xgCScAuQSwA"
-                height="4357"
-                width="95%"
+                height="80"
+                width="75%"
                 frameborder="0"
-                allowtransparency="true" />
+                allowtransparency="true"></iframe>
         </div>
     </div>
+    <br>
+    <div class="footer skyblue">
+        <hr class="footerSeparator">
+        &#9400;2017 Allan Rodriguez. All rights reserved.
+    </div>
+    <script>
+        var iframe = document.getElementById('playlist');
+        var numTracks = 98;
+        if (iframe != null) {
+            iframe.setAttribute('height', 80 + 45 * numTracks + 2);
+        }
+    </script>
 </body>
 </html>

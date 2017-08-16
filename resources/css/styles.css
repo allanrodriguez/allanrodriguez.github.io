@@ -1,0 +1,119 @@
+a {
+    color: inherit;
+}
+body {
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+}
+div.bigTitle, span.bigTitle {
+    font-family: "Rubik", "Helvetica", sans-serif;
+    font-size: 48px;
+    padding-bottom: 6px;
+}
+div.bodyText {
+    width: 75%;
+    margin: 0 auto;
+}
+div.content {
+    padding-top: 100px;
+}
+div.footer {
+    margin: 0 auto;
+    font-size: 8px;
+    font-style: italic;
+    text-align: center;
+    width: 75%;
+}
+div.header {
+    background-color: inherit;
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    padding-bottom: 6px;
+    padding-top: 6px;
+}
+div.header > a, span.smallHeader > a {
+    text-decoration: none;
+    position: relative;
+}
+div.firstLetter, span.firstLetter {
+    font-size: 32px;
+}
+div.bold, span.bold {
+    font-weight: bold;
+}
+span.smallHeader {
+    padding-left: 24px
+}
+span.linethrough {
+    text-decoration: line-through;
+}
+div.parallax {
+    background-attachment: fixed;
+    background-image: url("../images/mainbanner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    line-height: 400px;
+    text-align: center;
+    vertical-align: middle;
+}
+hr.footerSeparator {
+    border-style: solid none none none;
+    border-width: 0.5px;
+}
+/************** COLORS **************/
+.bgblack {
+    background-color: black;
+}
+.bggray {
+    background-color: gray;
+}
+.bggreen {
+    background-color: green;
+}
+.bglinkedin {
+    background-color: #0077b5;
+}
+.bgskyblue {
+    background-color: skyblue;
+}
+.bgtomato {
+    background-color: tomato;
+}
+.bgwhite {
+    background-color: white;
+}
+.bgyellow {
+    background-color: yellow;
+}
+.black {
+    color: black;
+}
+.gray {
+    color: gray;
+}
+.green {
+    color: green;
+}
+.linkedin {
+    color: #0077b5;
+}
+.skyblue {
+    color: skyblue;
+}
+.tomato {
+    color: tomato;
+}
+.white {
+    color: white;
+}
+.yellow {
+    color: yellow;
+}
