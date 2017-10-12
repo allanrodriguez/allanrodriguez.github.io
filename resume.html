@@ -19,18 +19,80 @@
     </div>
     <div id="content" class="content">
         <span class="bigTitle bold firstLetter bgwhite black">Résumé</span>
-        <div style="width:75%;margin:0 auto">
+        <div class="section">
             <p>
-                <span class="firstLetter gray">B</span>elow is my résumé for your consideration. <a href="./resources/pdf/AllanRodriguezResume.pdf" target="_blank">Link to open in a separate page</a>
+                <span class="firstLetter gray">C</span>lick
+                <a href="./resources/pdf/AllanRodriguezResume.pdf" target="_blank">here</a> to view my paper résumé in a new tab.
+            </p>
+            <p>
+                Because my paper résumé is only a brief summary of my accomplishments, below is a more detailed list of my achievements.
             </p>
         </div>
-        <div style="text-align: center">
-            <object data="./resources/pdf/AllanRodriguezResume.pdf" width="75%" height="1125"></object>
+        <br>
+        <span class="bigTitle bold firstLetter bgwhite black">Work history</span>
+        <div class="section">
+            <p>
+                <div class="bold">IT Intern</div>
+                <div><a href="http://www.maxlite.com" target="_blank">MaxLite</a>, Anaheim, CA</div>
+                <i>July 2015 - Present</i>
+            </p>
+            <p>
+                I've worked as the part-time IT intern at MaxLite's California facility for over two years. There, I'm the only on-site IT person, and administer more than 50 computers, printers, network devices, telephones, and conference systems in the office and warehouse.
+            </p>
+            <p>
+                My job consists of assisting employees in other departments, on-site and remote, with any issues they may have with their printers, computers, or any of the software we use, including Microsoft Office, MaxLite programs, TeamViewer, and lighting controls software. In addition, I maintain and troubleshoot the facility's multifunction copiers, routers, NEC telephone system, and Cisco TelePresence conference system.
+            </p>
+            <p>
+                As the sole on-site IT point of contact, I am also in charge of the coordination, acquisition, and installation of new devices. Most recently, I organized the acquisition of a Ricoh copier for the second floor office through talking with MaxLite's Ricoh representative and selecting the best machine for our needs and budget. On a day-to-day basis, I order new devices, components, software, and accessories as they are needed.
+            </p>
+        </div>
+        <br>
+        <span class="bigTitle bold firstLetter bgwhite black">Projects</span>
+        <div class="section">
+            <p>
+                <div class="bold">Chess-Playing Robot</div>
+                <div><i>March 2017</i></div>
+                <div><a href="https://github.com/allanrodriguez/JellyAI" target="_blank">Source code on GitHub</a></div>
+            </p>
+            <iframe
+                id="ytjelly"
+                width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/25QUqpAvNnE?rel=0"
+                style="border:none;"
+                allowfullscreen>
+                There's nothing here.
+            </iframe>
+            <script>
+                document.getElementById("ytjelly").height =
+                    (9 * document.getElementById("ytjelly").parentElement.offsetWidth) / 16;
+
+                window.addEventListener("resize", function() {
+                    document.getElementById("ytjelly").height = (9 * document.getElementById("ytjelly").parentElement.offsetWidth) / 16;
+                });
+            </script>
+            <p>
+                For my final senior design project, two other students in my major and I teamed up to build a system that enables a chess engine to read and manipulate a physical chessboard. In short, we created a robot that can play a real-life chess match with anyone!
+            </p>
+            <p>
+                The system consists of a Raspberry Pi that runs the chess engine and an optical recognition program (both written in C++), and an Arduino to control the robot arm's servo motors. The flow of control is as follows:
+            </p>
+            <ol>
+                <li>
+                    After the opponent makes a move, the optical recognition program sets out to detect the moved piece.
+                </li>
+                <li>
+                    The opponent's move is passed to the chess engine, which first determines if the move was legal. If the move was illegal, then the system displays a message to the opponent asking them to move the piece back to its previous place. Otherwise, the chess engine calculates the system's move, and passes it to the Arduino.
+               </li>
+               <li>
+                   The Arduino processes the move, and converts it to a series of instructions for the arm's servos. The arm then performs the move, and the system makes a final check to ensure that the move was made correctly.
+               </li>
+            </ol>
         </div>
     </div>
-    <br>
+    <p id="testP"></p>
     <div class="footer gray">
-        <hr class="footerSeparator">
+        <hr class="footerSeparator bggray">
         &#9400;2017 Allan Rodriguez. All rights reserved.
     </div>
 </body>

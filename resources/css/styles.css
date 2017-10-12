@@ -3,31 +3,27 @@ a {
 }
 body {
     font-family: "Roboto Mono", monospace;
-    font-size: 15px;
+    font-size: 16px;
 }
 div.bigTitle, span.bigTitle {
     font-family: "Rubik", "Helvetica", sans-serif;
-    font-size: 48px;
+    font-size: 3em;
     padding-bottom: 6px;
 }
-div.bodyText {
-    width: 75%;
-    margin: 0 auto;
-}
 div.content {
-    padding-top: 100px;
+    padding-top: 117px;
 }
 div.footer {
-    margin: 0 auto;
-    font-size: 8px;
+    font-size: 0.5em;
     font-style: italic;
+    margin: 0 auto;
     text-align: center;
     width: 75%;
 }
 div.header {
     background-color: inherit;
     font-family: "Roboto Mono", monospace;
-    font-size: 18px;
+    /*font-size: 1.25em;*/
     text-align: center;
     left: 0;
     right: 0;
@@ -42,13 +38,22 @@ div.header > a, span.smallHeader > a {
     position: relative;
 }
 div.firstLetter, span.firstLetter {
-    font-size: 32px;
+    font-size: 2em;
 }
 div.bold, span.bold {
     font-weight: bold;
 }
+div.section {
+    margin: 0 auto;
+    width: 75%;
+}
+div.shadow {
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
 span.smallHeader {
-    padding-left: 24px
+    padding-left: 24px;
 }
 span.linethrough {
     text-decoration: line-through;
@@ -65,9 +70,26 @@ div.parallax {
     vertical-align: middle;
 }
 hr.footerSeparator {
-    border-style: solid none none none;
-    border-width: 0.5px;
+    border: 0;
+    height: 0.9px;
 }
+
+/************** MEDIA QUERIES **************/
+@media only screen and (max-device-width: 768px) and (orientation: portrait) {
+    body {
+        font-size: 35px;
+    }
+    div.bigTitle, span.bigTitle {
+        font-size: 2.4em;
+    }
+    div.footer, div.section {
+        width: 100%;
+    }
+    div.content {
+        padding-top: 209px;
+    }
+}
+
 /************** COLORS **************/
 .bgblack {
     background-color: black;
