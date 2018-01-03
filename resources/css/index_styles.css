@@ -1,3 +1,5 @@
+@import "styles.css";
+
 div.header > a:before, span.smallHeader > a:before
 {
     content: "";

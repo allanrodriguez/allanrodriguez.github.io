@@ -1,8 +1,10 @@
+@import "https://fonts.googleapis.com/css?family=Roboto|Rubik";
+
 a {
     color: inherit;
 }
 body {
-    font-family: "Roboto Mono", monospace;
+    font-family: "Roboto", monospace;
     font-size: 16px;
 }
 div.bigTitle, span.bigTitle {
@@ -22,7 +24,7 @@ div.footer {
 }
 div.header {
     background-color: inherit;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Roboto", monospace;
     /*font-size: 1.25em;*/
     text-align: center;
     left: 0;
@@ -77,13 +79,13 @@ hr.footerSeparator {
 /************** MEDIA QUERIES **************/
 @media only screen and (max-device-width: 768px) and (orientation: portrait) {
     body {
-        font-size: 35px;
+        font-size: 42px;
     }
     div.bigTitle, span.bigTitle {
-        font-size: 2.4em;
+        font-size: 1.9em;
     }
     div.footer, div.section {
-        width: 100%;
+        width: 95%;
     }
     div.content {
         padding-top: 209px;
