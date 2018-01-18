@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files *//*!
+/* You can add global styles to this file, and also import other style files */@media screen and (orientation:portrait){table.sudoku-table{width:75vw;height:75vw}.sudoku-number{font-size:5vw}.nonet-number,.nonet-select-number{font-size:15vw}}@media screen and (orientation:landscape){table.sudoku-table{width:75vh;height:75vh}.sudoku-number{font-size:5vh}.nonet-number,.nonet-select-number{font-size:15vh}}td.nonet-cell{height:33.33%;width:33.33%}td.sudoku-cell{height:11.11%;width:11.11%}p.instructions-bar{height:2.5rem}/*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
