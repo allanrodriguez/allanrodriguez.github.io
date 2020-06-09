@@ -1,16 +1,20 @@
 .title-container {
   display: flex;
   align-items: center;
-  /* height: 50px; */
   padding-top: 1rem;
   padding-bottom: 1rem;
-  overflow: hidden;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .title {
-  /* margin-top: 12.25rem; */
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .title-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
