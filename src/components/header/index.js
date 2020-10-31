@@ -1,7 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
+import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar"
 import DayNightSwitch from "../day-night-switch"
-import styles from "./header.module.css"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -15,19 +16,21 @@ export default function Header() {
   `)
 
   return (
-    <nav>
-      <div className={styles.titleContainer}>
-        <div className={styles.title}>{data.site.siteMetadata.title}</div>
-        <div
-          style={{
-            display: "flex",
-            flexGrow: 1,
-            justifyContent: "right",
-          }}
-        >
+    <Navbar collapseOnSelect expand="lg" variant="dark">
+      <Navbar.Brand>
+        <b>{data.site.siteMetadata.title}</b>
+      </Navbar.Brand>
+
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="#projects">Projects</Nav.Link>
+        </Nav>
+        <Nav>
           <DayNightSwitch />
-        </div>
-      </div>
-    </nav>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   )
 }

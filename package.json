@@ -17,9 +17,8 @@
     "@reduxjs/toolkit": "^1.4.0",
     "bootstrap": "^4.5.0",
     "gatsby": "^2.24.14",
-    "material-components-web": "^7.0.0",
-    "normalize.css": "^8.0.1",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5"

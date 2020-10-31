@@ -8,6 +8,7 @@
   display: inline-block;
   width: 44px;
   height: 22px;
+  margin-bottom: unset;
 }
 
 .switch input {

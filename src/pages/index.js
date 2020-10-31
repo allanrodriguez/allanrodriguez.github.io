@@ -1,7 +1,6 @@
 import React from "react"
 import Header from "../components/header"
-import "normalize.css"
-import "bootstrap/dist/css/bootstrap-grid.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 import "./global.css"
 
 export default function Home() {
