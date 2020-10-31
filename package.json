@@ -19,13 +19,13 @@
     "gatsby": "^2.24.14",
     "material-components-web": "^7.0.0",
     "normalize.css": "^8.0.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "prettier": "2.1.2"
   },
   "repository": {
     "type": "git",
