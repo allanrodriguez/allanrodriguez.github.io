@@ -10,7 +10,16 @@ export default function Home() {
         <Header />
       </header>
       <div className="container-md">
-        <svg width="200" height="200" fill="#ffffff"></svg>
+        <div className="text-center py-3">
+          <img
+            className="rounded-circle"
+            alt="Avatar"
+            src="https://avatars0.githubusercontent.com/u/28719059"
+            title="C'est moi 😊"
+            width="200"
+            height="200"
+          />
+        </div>
         <h2>Hello world!</h2>
         <p>
           My name is Allan Rodríguez, and I graduated with a Bachelor's Degree in Computer Engineering from UC Irvine in
