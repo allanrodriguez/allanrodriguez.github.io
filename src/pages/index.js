@@ -10,7 +10,7 @@ export default function Home() {
         <Header />
       </header>
       <div className="container-md">
-        <div className="text-center py-3">
+        <div className="text-center py-5">
           <img
             className="rounded-circle"
             alt="Avatar"
