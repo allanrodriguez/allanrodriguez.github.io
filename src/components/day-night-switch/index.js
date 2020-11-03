@@ -10,12 +10,16 @@ export default function DayNightSwitch() {
 
   return (
     <div className={styles.container}>
-      🌜
+      <span role="img" aria-label="Moon">
+        🌜
+      </span>
       <label className={styles.switch}>
         <input type="checkbox" onChange={e => setDayNightStatus(e.target.checked)} checked={dayNight.isDay} />
         <span className={styles.slider} />
       </label>
-      🌞
+      <span role="img" aria-label="Sun">
+        🌞
+      </span>
     </div>
   )
 }

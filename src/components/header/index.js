@@ -2,7 +2,6 @@ import { graphql, navigate, useStaticQuery } from "gatsby"
 import React from "react"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
-import DayNightSwitch from "../day-night-switch"
 import styles from "./header.module.css"
 
 function GatsbyNavLink(props) {
@@ -70,7 +69,6 @@ export default function Header() {
           <Nav.Item className={styles.logoLink} as="li">
             <HeaderLogoLink alt="Spotify logo" href={links.spotify} logoName="spotify" />
           </Nav.Item>
-          {/* <DayNightSwitch /> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
