@@ -1,0 +1,4 @@
+li.logo-link:not(:first-child):not(:last-child) {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

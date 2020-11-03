@@ -1,23 +1,47 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import React from "react"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import DayNightSwitch from "../day-night-switch"
+import styles from "./header.module.css"
 
 function GatsbyNavLink(props) {
-  return <Link activeClassName="nav-link" data-rb-event-key={props.to} {...props} />
+  return (
+    <Nav.Link eventKey={props.to} onSelect={() => navigate(props.to)}>
+      {props.children}
+    </Nav.Link>
+  )
+}
+
+function HeaderLogoLink({ alt, className, href, logoName }) {
+  return (
+    <a href={href}>
+      <img
+        className={className}
+        alt={alt}
+        src={`https://raw.githubusercontent.com/rdimascio/icons/master/icons/light/${logoName}.svg`}
+        height="21"
+      />
+    </a>
+  )
 }
 
 export default function Header() {
   const data = useStaticQuery(graphql`
-    query TitleQuery {
+    query HeaderQuery {
       site {
         siteMetadata {
           title
+          links {
+            gitHub
+            linkedIn
+            spotify
+          }
         }
       }
     }
   `)
+  const links = data.site.siteMetadata.links
 
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
@@ -28,14 +52,24 @@ export default function Header() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <GatsbyNavLink to="/">About</GatsbyNavLink>
-          <Nav.Link href="#projects">Projects</Nav.Link>
+        <Nav activeKey="/" className="mr-auto">
+          <Nav.Item>
+            <GatsbyNavLink to="/">About</GatsbyNavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <GatsbyNavLink to="/projects">Projects</GatsbyNavLink>
+          </Nav.Item>
         </Nav>
-        <Nav>
-          <img src="https://raw.githubusercontent.com/rdimascio/icons/master/icons/light/github.svg" height="24" />
-          <img src="https://raw.githubusercontent.com/rdimascio/icons/master/icons/light/linkedin.svg" height="24" />
-          <img src="https://raw.githubusercontent.com/rdimascio/icons/master/icons/light/spotify.svg" height="24" />
+        <Nav className="flex-row py-2" as="ul">
+          <Nav.Item className={styles.logoLink} as="li">
+            <HeaderLogoLink alt="GitHub logo" href={links.gitHub} logoName="github" />
+          </Nav.Item>
+          <Nav.Item className={styles.logoLink} as="li">
+            <HeaderLogoLink alt="LinkedIn logo" href={links.linkedIn} logoName="linkedin" />
+          </Nav.Item>
+          <Nav.Item className={styles.logoLink} as="li">
+            <HeaderLogoLink alt="Spotify logo" href={links.spotify} logoName="spotify" />
+          </Nav.Item>
           {/* <DayNightSwitch /> */}
         </Nav>
       </Navbar.Collapse>
