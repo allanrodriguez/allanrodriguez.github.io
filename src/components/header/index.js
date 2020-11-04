@@ -1,5 +1,6 @@
 import { graphql, navigate, useStaticQuery } from "gatsby"
 import React from "react"
+import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import styles from "./header.module.css"
@@ -44,33 +45,35 @@ export default function Header() {
 
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
-      <Navbar.Brand>
-        <b>{data.site.siteMetadata.title}</b>
-      </Navbar.Brand>
+      <Container fluid="lg">
+        <Navbar.Brand>
+          <b>{data.site.siteMetadata.title}</b>
+        </Navbar.Brand>
 
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav activeKey="/" className="mr-auto">
-          <Nav.Item>
-            <GatsbyNavLink to="/">About</GatsbyNavLink>
-          </Nav.Item>
-          <Nav.Item>
-            <GatsbyNavLink to="/projects">Projects</GatsbyNavLink>
-          </Nav.Item>
-        </Nav>
-        <Nav className="flex-row py-2" as="ul">
-          <Nav.Item className={styles.logoLink} as="li">
-            <HeaderLogoLink alt="GitHub logo" href={links.gitHub} logoName="github" />
-          </Nav.Item>
-          <Nav.Item className={styles.logoLink} as="li">
-            <HeaderLogoLink alt="LinkedIn logo" href={links.linkedIn} logoName="linkedin" />
-          </Nav.Item>
-          <Nav.Item className={styles.logoLink} as="li">
-            <HeaderLogoLink alt="Spotify logo" href={links.spotify} logoName="spotify" />
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav activeKey={window.location.pathname} className="mr-auto">
+            <Nav.Item>
+              <GatsbyNavLink to="/">About</GatsbyNavLink>
+            </Nav.Item>
+            <Nav.Item>
+              <GatsbyNavLink to="/projects">Projects</GatsbyNavLink>
+            </Nav.Item>
+          </Nav>
+          <Nav className="flex-row py-2" as="ul">
+            <Nav.Item className={styles.logoLink} as="li">
+              <HeaderLogoLink alt="GitHub logo" href={links.gitHub} logoName="github" />
+            </Nav.Item>
+            <Nav.Item className={styles.logoLink} as="li">
+              <HeaderLogoLink alt="LinkedIn logo" href={links.linkedIn} logoName="linkedin" />
+            </Nav.Item>
+            <Nav.Item className={styles.logoLink} as="li">
+              <HeaderLogoLink alt="Spotify logo" href={links.spotify} logoName="spotify" />
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   )
 }
