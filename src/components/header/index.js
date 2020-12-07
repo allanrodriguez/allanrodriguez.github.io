@@ -53,7 +53,7 @@ export default function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav activeKey={window.location.pathname} className="mr-auto">
+          <Nav activeKey={typeof window !== "undefined" && window.location.pathname} className="mr-auto">
             <Nav.Item>
               <GatsbyNavLink to="/">About</GatsbyNavLink>
             </Nav.Item>
