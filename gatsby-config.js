@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: [],
+  plugins: ["gatsby-plugin-react-helmet-async"],
   siteMetadata: {
     title: "Allan Rodríguez",
     links: {
