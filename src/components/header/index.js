@@ -1,15 +1,15 @@
-import { graphql, navigate, useStaticQuery } from "gatsby"
+import { graphql, Link, navigate, useStaticQuery } from "gatsby"
 import React from "react"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import styles from "./header.module.css"
 
-function GatsbyNavLink(props) {
+function GatsbyNavLink({ children, to }) {
   return (
-    <Nav.Link eventKey={props.to} onSelect={() => navigate(props.to)}>
-      {props.children}
-    </Nav.Link>
+    <Link className="nav-link" activeClassName="active" to={to}>
+      {children}
+    </Link>
   )
 }
 
@@ -58,7 +58,7 @@ export default function Header() {
               <GatsbyNavLink to="/">About</GatsbyNavLink>
             </Nav.Item>
             <Nav.Item>
-              <GatsbyNavLink to="/projects">Projects</GatsbyNavLink>
+              <GatsbyNavLink to="/projects/">Projects</GatsbyNavLink>
             </Nav.Item>
           </Nav>
           <Nav className="flex-row py-2" as="ul">
