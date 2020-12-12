@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <ResponsiveEmbed className="my-3" aspectRatio="16by9">
         <iframe
           className="embed-responsive-item"
-          allowfullscreen
+          allowFullScreen
           src="https://www.youtube.com/embed/25QUqpAvNnE?rel=0"
           title="Jelly in action"
         >
