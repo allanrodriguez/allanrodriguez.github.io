@@ -26,7 +26,7 @@ function HeaderLogoLink({ alt, className, href, logoName }) {
   )
 }
 
-export default function Header({ style }) {
+export default function Header({ onToggle, style }) {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -44,7 +44,15 @@ export default function Header({ style }) {
   const links = data.site.siteMetadata.links
 
   return (
-    <Navbar className={styles.navbar} collapseOnSelect expand="lg" variant="dark" fixed="top" style={style}>
+    <Navbar
+      className={styles.navbar}
+      collapseOnSelect
+      expand="lg"
+      variant="dark"
+      fixed="top"
+      style={style}
+      onToggle={onToggle}
+    >
       <Container fluid="lg">
         <Navbar.Brand>
           <b>{data.site.siteMetadata.title}</b>

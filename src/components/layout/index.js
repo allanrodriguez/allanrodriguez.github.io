@@ -30,9 +30,12 @@ function createWindowScrollCallback(callback) {
 }
 
 export default function Layout({ children, className }) {
+  const [headerExpanded, setHeaderExpanded] = React.useState(false)
   const [headerTop, setHeaderTop] = React.useState(0)
 
   React.useEffect(() => {
+    if (headerExpanded) return
+
     let localHeaderTop = 0
 
     const onWindowScroll = createWindowScrollCallback(deltaY => {
@@ -48,13 +51,19 @@ export default function Layout({ children, className }) {
     window.addEventListener("scroll", onWindowScroll)
 
     return () => window.removeEventListener("scroll", onWindowScroll)
-  }, [])
+  }, [headerExpanded])
+
+  const onHeaderToggled = expanded => {
+    setHeaderExpanded(expanded)
+
+    if (expanded) setHeaderTop(0)
+  }
 
   return (
     <>
       <Helmet htmlAttributes={{ lang: "en" }} />
       <header>
-        <Header style={{ top: headerTop }} />
+        <Header onToggle={onHeaderToggled} style={{ top: headerTop }} />
       </header>
       <main>
         <div className={styles.fixed}>
