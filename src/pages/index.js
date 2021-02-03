@@ -15,7 +15,7 @@ export default function Home() {
           height="200"
         />
       </div>
-      <h2>Hello world!</h2>
+      <h2>Hello!</h2>
       <p>
         My name is Allan Rodríguez, and I graduated with a Bachelor's Degree in Computer Engineering from UC Irvine in
         June of 2017. Since then, I've been using my skills for work as well as on small personal projects for personal
