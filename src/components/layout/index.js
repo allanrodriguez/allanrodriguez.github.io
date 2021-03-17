@@ -4,7 +4,7 @@ import Footer from "../footer"
 import Header from "../header"
 import SEO from "../seo"
 import "bootstrap/dist/css/bootstrap.min.css"
-import styles from "./layout.module.css"
+import { fixed } from "./layout.module.css"
 
 const headerHeight = 56
 
@@ -66,7 +66,7 @@ export default function Layout({ children, className }) {
         <Header onToggle={onHeaderToggled} style={{ top: headerTop }} />
       </header>
       <main>
-        <div className={styles.fixed}>
+        <div className={fixed}>
           <Container className={className} fluid="lg">
             {children}
           </Container>

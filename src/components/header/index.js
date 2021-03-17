@@ -3,7 +3,7 @@ import React from "react"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
-import styles from "./header.module.css"
+import { logoLink, navbar } from "./header.module.css"
 
 function GatsbyNavLink({ children, to }) {
   return (
@@ -45,7 +45,7 @@ export default function Header({ onToggle, style }) {
 
   return (
     <Navbar
-      className={styles.navbar}
+      className={navbar}
       collapseOnSelect
       expand="lg"
       variant="dark"
@@ -70,13 +70,13 @@ export default function Header({ onToggle, style }) {
             </Nav.Item>
           </Nav>
           <Nav className="flex-row py-2" as="ul">
-            <Nav.Item className={styles.logoLink} as="li">
+            <Nav.Item className={logoLink} as="li">
               <HeaderLogoLink alt="GitHub logo" href={links.gitHub} logoName="github" />
             </Nav.Item>
-            <Nav.Item className={styles.logoLink} as="li">
+            <Nav.Item className={logoLink} as="li">
               <HeaderLogoLink alt="LinkedIn logo" href={links.linkedIn} logoName="linkedin" />
             </Nav.Item>
-            <Nav.Item className={styles.logoLink} as="li">
+            <Nav.Item className={logoLink} as="li">
               <HeaderLogoLink alt="Spotify logo" href={links.spotify} logoName="spotify" />
             </Nav.Item>
           </Nav>
