@@ -1,30 +1,11 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
+import GatsbyNavLink from "./components/gatsby-nav-link"
+import LogoLink from "./components/logo-link"
 import { logoLink, navbar } from "./header.module.css"
-
-function GatsbyNavLink({ children, to }) {
-  return (
-    <Link className="nav-link" activeClassName="active" to={to}>
-      {children}
-    </Link>
-  )
-}
-
-function HeaderLogoLink({ alt, className, href, logoName }) {
-  return (
-    <a href={href}>
-      <img
-        className={className}
-        alt={alt}
-        src={`https://raw.githubusercontent.com/rdimascio/icons/master/icons/light/${logoName}.svg`}
-        height="21"
-      />
-    </a>
-  )
-}
 
 export default function Header({ onToggle, style }) {
   const data = useStaticQuery(graphql`
@@ -71,13 +52,13 @@ export default function Header({ onToggle, style }) {
           </Nav>
           <Nav className="flex-row py-2" as="ul">
             <Nav.Item className={logoLink} as="li">
-              <HeaderLogoLink alt="GitHub logo" href={links.gitHub} logoName="github" />
+              <LogoLink alt="GitHub logo" href={links.gitHub} logoName="github" />
             </Nav.Item>
             <Nav.Item className={logoLink} as="li">
-              <HeaderLogoLink alt="LinkedIn logo" href={links.linkedIn} logoName="linkedin" />
+              <LogoLink alt="LinkedIn logo" href={links.linkedIn} logoName="linkedin" />
             </Nav.Item>
             <Nav.Item className={logoLink} as="li">
-              <HeaderLogoLink alt="Spotify logo" href={links.spotify} logoName="spotify" />
+              <LogoLink alt="Spotify logo" href={links.spotify} logoName="spotify" />
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

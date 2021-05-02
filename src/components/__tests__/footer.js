@@ -8,5 +8,6 @@ test("footer has copyright with correct year", async () => {
 
   const { findByText } = render(<Footer />)
 
-  await findByText(text)
+  const result = await findByText(text)
+  expect(result).toBeInTheDocument()
 })
