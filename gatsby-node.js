@@ -1,5 +1,5 @@
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
+  const { createTypes } = actions;
   const typeDefs = `
     type SiteSiteMetadata {
       description: String
@@ -9,6 +9,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       twitterUsername: String
       url: String
     }
-  `
-  createTypes(typeDefs)
-}
+  `;
+  createTypes(typeDefs);
+};

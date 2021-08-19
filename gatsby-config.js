@@ -8,4 +8,4 @@ module.exports = {
       spotify: "https://open.spotify.com/user/wienerbreado",
     },
   },
-}
+};

@@ -1,67 +1,70 @@
-import React from "react"
-import Container from "react-bootstrap/Container"
-import Footer from "../footer"
-import Header from "../header"
-import SEO from "../seo"
-import "bootstrap/dist/css/bootstrap.min.css"
-import { fixed } from "./layout.module.css"
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Footer from "../footer";
+import Header from "../header";
+import Seo from "../seo";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { fixed } from "./layout.module.css";
 
-const headerHeight = 56
+const headerHeight = 56;
 
 function createWindowScrollCallback(callback) {
-  let isTicking = false
-  let previousScrollY = window.scrollY
+  let isTicking = false;
+  let previousScrollY = window.scrollY;
 
   return () => {
-    const deltaY = window.scrollY - previousScrollY
-    if (deltaY === 0) return
+    const deltaY = window.scrollY - previousScrollY;
+    if (deltaY === 0) return;
 
-    previousScrollY = window.scrollY
+    previousScrollY = window.scrollY;
 
-    if (isTicking) return
+    if (isTicking) return;
 
     window.requestAnimationFrame(() => {
-      callback(deltaY)
-      isTicking = false
-    })
+      callback(deltaY);
+      isTicking = false;
+    });
 
-    isTicking = true
-  }
+    isTicking = true;
+  };
 }
 
 export default function Layout({ children, className }) {
-  const [headerExpanded, setHeaderExpanded] = React.useState(false)
-  const [headerTop, setHeaderTop] = React.useState(0)
+  const [headerExpanded, setHeaderExpanded] = React.useState(false);
+  const [headerTop, setHeaderTop] = React.useState(0);
 
   React.useEffect(() => {
-    if (headerExpanded) return
+    if (headerExpanded) return;
 
-    let localHeaderTop = 0
+    let localHeaderTop = 0;
 
-    const onWindowScroll = createWindowScrollCallback(deltaY => {
+    const onWindowScroll = createWindowScrollCallback((deltaY) => {
       if (deltaY > 0 && localHeaderTop > -headerHeight) {
-        localHeaderTop = localHeaderTop - deltaY > -headerHeight ? localHeaderTop - deltaY : -headerHeight
-        setHeaderTop(localHeaderTop)
+        localHeaderTop =
+          localHeaderTop - deltaY > -headerHeight
+            ? localHeaderTop - deltaY
+            : -headerHeight;
+        setHeaderTop(localHeaderTop);
       } else if (deltaY < 0 && localHeaderTop < 0) {
-        localHeaderTop = localHeaderTop < deltaY ? localHeaderTop - deltaY : 0
-        setHeaderTop(localHeaderTop)
+        localHeaderTop = localHeaderTop < deltaY ? localHeaderTop - deltaY : 0;
+        setHeaderTop(localHeaderTop);
       }
-    })
+    });
 
-    window.addEventListener("scroll", onWindowScroll)
+    window.addEventListener("scroll", onWindowScroll);
 
-    return () => window.removeEventListener("scroll", onWindowScroll)
-  }, [headerExpanded])
+    return () => window.removeEventListener("scroll", onWindowScroll);
+  }, [headerExpanded]);
 
-  const onHeaderToggled = expanded => {
-    setHeaderExpanded(expanded)
+  const onHeaderToggled = (expanded) => {
+    setHeaderExpanded(expanded);
 
-    if (expanded) setHeaderTop(0)
-  }
+    if (expanded) setHeaderTop(0);
+  };
 
   return (
     <>
-      <SEO />
+      <Seo />
       <header>
         <Header onToggle={onHeaderToggled} style={{ top: headerTop }} />
       </header>
@@ -76,5 +79,5 @@ export default function Layout({ children, className }) {
         <Footer />
       </footer>
     </>
-  )
+  );
 }

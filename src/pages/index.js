@@ -1,6 +1,6 @@
-import React from "react"
-import Layout from "../components/layout"
-import "./global.css"
+import React from "react";
+import Layout from "../components/layout";
+import "./global.css";
 
 export default function Home() {
   return (
@@ -17,15 +17,18 @@ export default function Home() {
       </div>
       <h2>Hello!</h2>
       <p>
-        My name is Allan Rodríguez, and I graduated with a Bachelor's Degree in Computer Engineering from UC Irvine in
-        June of 2017. Since then, I've been using my skills for work as well as on small personal projects for personal
-        growth.
+        My name is Allan Rodríguez, and I graduated with a Bachelor's Degree in
+        Computer Engineering from UC Irvine in June of 2017. Since then, I've
+        been using my skills for work as well as on small personal projects for
+        personal growth.
       </p>
       <p>
-        The purpose of this website is to&nbsp;<del>show off how good I am at front-end development</del>&nbsp;develop
-        the skills I've learned throughout my life and to show others what I've been up to.
+        The purpose of this website is to&nbsp;
+        <del>show off how good I am at front-end development</del>&nbsp;develop
+        the skills I've learned throughout my life and to show others what I've
+        been up to.
       </p>
       <p>I hope this website is informative to you. Thank you for visiting!</p>
     </Layout>
-  )
+  );
 }

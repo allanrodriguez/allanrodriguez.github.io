@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export default function HeaderLogoLink({ alt, className, href, logoName }) {
   return (
@@ -10,5 +10,5 @@ export default function HeaderLogoLink({ alt, className, href, logoName }) {
         height="21"
       />
     </a>
-  )
+  );
 }

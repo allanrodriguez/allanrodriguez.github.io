@@ -1,11 +1,11 @@
-import { graphql, useStaticQuery } from "gatsby"
-import React from "react"
-import Container from "react-bootstrap/Container"
-import Nav from "react-bootstrap/Nav"
-import Navbar from "react-bootstrap/Navbar"
-import GatsbyNavLink from "./components/gatsby-nav-link"
-import LogoLink from "./components/logo-link"
-import { logoLink, navbar } from "./header.module.css"
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import GatsbyNavLink from "./components/gatsby-nav-link";
+import LogoLink from "./components/logo-link";
+import { logoLink, navbar } from "./header.module.css";
 
 export default function Header({ onToggle, style }) {
   const data = useStaticQuery(graphql`
@@ -21,8 +21,8 @@ export default function Header({ onToggle, style }) {
         }
       }
     }
-  `)
-  const links = data.site.siteMetadata.links
+  `);
+  const links = data.site.siteMetadata.links;
 
   return (
     <Navbar
@@ -42,7 +42,12 @@ export default function Header({ onToggle, style }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav activeKey={typeof window !== "undefined" && window.location.pathname} className="mr-auto">
+          <Nav
+            activeKey={
+              typeof window !== "undefined" && window.location.pathname
+            }
+            className="mr-auto"
+          >
             <Nav.Item>
               <GatsbyNavLink to="/">About</GatsbyNavLink>
             </Nav.Item>
@@ -52,17 +57,29 @@ export default function Header({ onToggle, style }) {
           </Nav>
           <Nav className="flex-row py-2" as="ul">
             <Nav.Item className={logoLink} as="li">
-              <LogoLink alt="GitHub logo" href={links.gitHub} logoName="github" />
+              <LogoLink
+                alt="GitHub logo"
+                href={links.gitHub}
+                logoName="github"
+              />
             </Nav.Item>
             <Nav.Item className={logoLink} as="li">
-              <LogoLink alt="LinkedIn logo" href={links.linkedIn} logoName="linkedin" />
+              <LogoLink
+                alt="LinkedIn logo"
+                href={links.linkedIn}
+                logoName="linkedin"
+              />
             </Nav.Item>
             <Nav.Item className={logoLink} as="li">
-              <LogoLink alt="Spotify logo" href={links.spotify} logoName="spotify" />
+              <LogoLink
+                alt="Spotify logo"
+                href={links.spotify}
+                logoName="spotify"
+              />
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  );
 }
