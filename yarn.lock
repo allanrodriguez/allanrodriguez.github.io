@@ -3106,7 +3106,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "allanrodriguez.github.io@workspace:."
   dependencies:
-    bootstrap: 5.1.0
+    bootstrap: 4.6.0
     gatsby: 3.12.0
     gatsby-plugin-react-helmet-async: 1.2.0
     prettier: 2.3.2
@@ -3853,12 +3853,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:5.1.0":
-  version: 5.1.0
-  resolution: "bootstrap@npm:5.1.0"
+"bootstrap@npm:4.6.0":
+  version: 4.6.0
+  resolution: "bootstrap@npm:4.6.0"
   peerDependencies:
-    "@popperjs/core": ^2.9.3
-  checksum: 1e556b71c47b55f6411f789e6d43986f6a3646875f1bef47ee8b1bc16e5d395e75b275d207d6bda7d9752d0573eb4ee5faecb03ebea17dca6259ac8dd68a6aea
+    jquery: 1.9.1 - 3
+    popper.js: ^1.16.1
+  checksum: 998a21691a54113afda3354357338930e86e64c3a29514f342dde11100937f5f3b64248e49fd31b7c4fcce332b730baa9a68cbe553366febcbdd80dae21bd78f
   languageName: node
   linkType: hard
 
