@@ -1,4 +1,6 @@
-module.exports = {
+import type { GatsbyConfig } from "gatsby";
+
+const config: GatsbyConfig = {
   plugins: ["gatsby-plugin-react-helmet-async"],
   siteMetadata: {
     title: "Allan Rodríguez",
@@ -9,3 +11,5 @@ module.exports = {
     },
   },
 };
+
+export default config;
