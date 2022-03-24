@@ -1,5 +1,5 @@
 import React from "react";
-import ResponsiveEmbed from "react-bootstrap/ResponsiveEmbed";
+import Ratio from "react-bootstrap/Ratio";
 import Layout from "../../components/layout";
 import "../global.css";
 
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
           GitHub repository
         </a>
       </h6>
-      <ResponsiveEmbed className="my-3" aspectRatio="16by9">
+      <Ratio className="my-3" aspectRatio="16x9">
         <iframe
           className="embed-responsive-item"
           allowFullScreen
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
         >
           There's nothing here.
         </iframe>
-      </ResponsiveEmbed>
+      </Ratio>
       <p>
         For my final senior design project, two other students in my major and I
         teamed up to build a system that enables a chess engine to read and
