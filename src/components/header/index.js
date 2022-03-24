@@ -46,7 +46,7 @@ export default function Header({ onToggle, style }) {
             activeKey={
               typeof window !== "undefined" && window.location.pathname
             }
-            className="mr-auto"
+            className="me-auto"
           >
             <Nav.Item>
               <GatsbyNavLink to="/">About</GatsbyNavLink>
