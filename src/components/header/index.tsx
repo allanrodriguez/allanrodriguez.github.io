@@ -7,7 +7,12 @@ import GatsbyNavLink from "./components/gatsby-nav-link";
 import LogoLink from "./components/logo-link";
 import { logoLink, navbar } from "./header.module.css";
 
-export default function Header({ onToggle, style }) {
+interface HeaderProps {
+  onToggle?: (expanded: boolean) => void;
+  style?: React.CSSProperties;
+}
+
+const Header: React.FC<HeaderProps> = ({ onToggle, style }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -82,4 +87,6 @@ export default function Header({ onToggle, style }) {
       </Container>
     </Navbar>
   );
-}
+};
+
+export default Header;

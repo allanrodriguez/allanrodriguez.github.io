@@ -8,7 +8,11 @@ import { fixed } from "./layout.module.css";
 
 const headerHeight = 56;
 
-function createWindowScrollCallback(callback) {
+interface LayoutProps {
+  className?: string;
+}
+
+function createWindowScrollCallback(callback: (deltaY: number) => void) {
   let isTicking = false;
   let previousScrollY = window.scrollY;
 
@@ -29,7 +33,7 @@ function createWindowScrollCallback(callback) {
   };
 }
 
-export default function Layout({ children, className }) {
+const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   const [headerExpanded, setHeaderExpanded] = React.useState(false);
   const [headerTop, setHeaderTop] = React.useState(0);
 
@@ -56,7 +60,7 @@ export default function Layout({ children, className }) {
     return () => window.removeEventListener("scroll", onWindowScroll);
   }, [headerExpanded]);
 
-  const onHeaderToggled = (expanded) => {
+  const onHeaderToggled = (expanded: boolean) => {
     setHeaderExpanded(expanded);
 
     if (expanded) setHeaderTop(0);
@@ -64,7 +68,7 @@ export default function Layout({ children, className }) {
 
   return (
     <>
-      <Seo />
+      {/* <Seo /> */}
       <header>
         <Header onToggle={onHeaderToggled} style={{ top: headerTop }} />
       </header>
@@ -80,4 +84,6 @@ export default function Layout({ children, className }) {
       </footer>
     </>
   );
-}
+};
+
+export default Layout;

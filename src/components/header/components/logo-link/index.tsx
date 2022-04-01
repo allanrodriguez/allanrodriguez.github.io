@@ -1,6 +1,18 @@
 import React from "react";
 
-export default function HeaderLogoLink({ alt, className, href, logoName }) {
+interface HeaderLogoLinkProps {
+  alt?: string;
+  className?: string;
+  href?: string;
+  logoName: string;
+}
+
+const HeaderLogoLink: React.FC<HeaderLogoLinkProps> = ({
+  alt,
+  className,
+  href,
+  logoName,
+}) => {
   return (
     <a href={href}>
       <img
@@ -11,4 +23,6 @@ export default function HeaderLogoLink({ alt, className, href, logoName }) {
       />
     </a>
   );
-}
+};
+
+export default HeaderLogoLink;

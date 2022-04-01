@@ -1,10 +1,16 @@
 import { Link } from "gatsby";
 import React from "react";
 
-export default function GatsbyNavLink({ children, to }) {
+interface GatsbyNavLinkProps {
+  to: string;
+}
+
+const GatsbyNavLink: React.FC<GatsbyNavLinkProps> = ({ children, to }) => {
   return (
     <Link className="nav-link" activeClassName="active" to={to}>
       {children}
     </Link>
   );
-}
+};
+
+export default GatsbyNavLink;
