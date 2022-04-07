@@ -68,7 +68,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
 
   return (
     <>
-      {/* <Seo /> */}
+      <Seo />
       <header>
         <Header onToggle={onHeaderToggled} style={{ top: headerTop }} />
       </header>

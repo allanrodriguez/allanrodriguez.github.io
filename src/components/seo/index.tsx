@@ -3,6 +3,14 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "@reach/router";
 import { graphql, useStaticQuery } from "gatsby";
 
+interface SeoProps {
+  title?: string;
+  titleTemplate?: string;
+  description?: string;
+  image?: string;
+  article?: string;
+}
+
 const query = graphql`
   query SEO {
     site {
@@ -18,7 +26,7 @@ const query = graphql`
   }
 `;
 
-export default function Seo({ title, description, image, article }) {
+const Seo: React.FC<SeoProps> = ({ title, description, image, article }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
@@ -74,4 +82,6 @@ export default function Seo({ title, description, image, article }) {
       {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
   );
-}
+};
+
+export default Seo;
