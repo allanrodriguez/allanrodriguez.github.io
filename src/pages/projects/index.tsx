@@ -1,9 +1,10 @@
+import { PageProps } from "gatsby";
 import React from "react";
 import Ratio from "react-bootstrap/Ratio";
 import Layout from "../../components/layout";
 import "../global.css";
 
-export default function ProjectsPage() {
+const ProjectsPage: React.FC<PageProps> = () => {
   return (
     <Layout className="pt-3">
       <h2>Projects</h2>
@@ -134,4 +135,6 @@ export default function ProjectsPage() {
       </p>
     </Layout>
   );
-}
+};
+
+export default ProjectsPage;

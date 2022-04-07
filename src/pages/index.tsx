@@ -1,8 +1,9 @@
+import { PageProps } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import "./global.css";
 
-export default function Home() {
+const Home: React.FC<PageProps> = () => {
   return (
     <Layout>
       <div className="text-center py-5">
@@ -31,4 +32,6 @@ export default function Home() {
       <p>I hope this website is informative to you. Thank you for visiting!</p>
     </Layout>
   );
-}
+};
+
+export default Home;
