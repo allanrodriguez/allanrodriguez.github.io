@@ -33,7 +33,10 @@ function createWindowScrollCallback(callback: (deltaY: number) => void) {
   };
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, className }) => {
+const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
+  children,
+  className,
+}) => {
   const [headerExpanded, setHeaderExpanded] = React.useState(false);
   const [headerTop, setHeaderTop] = React.useState(0);
 

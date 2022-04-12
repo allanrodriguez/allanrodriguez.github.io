@@ -5,7 +5,10 @@ interface GatsbyNavLinkProps {
   to: string;
 }
 
-const GatsbyNavLink: React.FC<GatsbyNavLinkProps> = ({ children, to }) => {
+const GatsbyNavLink: React.FC<React.PropsWithChildren<GatsbyNavLinkProps>> = ({
+  children,
+  to,
+}) => {
   return (
     <Link className="nav-link" activeClassName="active" to={to}>
       {children}
