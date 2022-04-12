@@ -13,6 +13,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/inter": "4.5.7",
     "bootstrap": "5.1.3",
     "gatsby": "4.11.3",
     "gatsby-plugin-react-helmet-async": "1.2.1",

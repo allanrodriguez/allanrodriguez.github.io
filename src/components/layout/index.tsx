@@ -4,6 +4,9 @@ import Footer from "../footer";
 import Header from "../header";
 import Seo from "../seo";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-700.css";
+import "@fontsource/inter/latin-900.css";
 import { fixed } from "./layout.module.css";
 
 const headerHeight = 56;
